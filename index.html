@@ -9,6 +9,7 @@
 
     <!-- style -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
 
     <!-- CDN FontaWesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -31,8 +32,7 @@
             <aside>
                 <div class="header">
                     <div class="user">
-                        <img src="img/minion_user.png" alt="imagem aqui"
-                            style="width: 50px;  margin: 0 auto;">
+                        <img src="img/minion_user.png" alt="imagem aqui" style="width: 50px;  margin: 0 auto;">
                     </div>
 
                     <div class="name">
@@ -56,7 +56,7 @@
                         <li>
                             <i class="fas fa-tasks"></i>
                             <label for="fas fa-sun"> Todas as Tarefas </label>
-                            <div>
+                            <div class="countTasks" id="test">
                                 0
                             </div>
                         </li>
@@ -91,7 +91,7 @@
                 <div class="bar">
                     <div class="items-bar">
                         <h1>Tarefas</h1>
-                        <button id="btnTask" onclick="adcElemento(); hidenElement();"><i class="fas fa-user-plus"></i></button>
+                        <button id="btnTask"><i class="fas fa-user-plus"></i></button>
                         <button><i class="fas fa-ellipsis-h"></i></button>
                     </div>
                 </div>
@@ -105,190 +105,24 @@
                         <div class="todo">
                             <div class="headerTasks">
                                 <label for="lists">A fazer</label>
+                                <label for="lists" id="qtd"></label>
                             </div>
                             <div class="items">
-                                <div id="teste" class="notItem">
+                                <div class="notItem" id="notItem">
                                     Não foi Cadastrada nenhuma Tarefa!
                                 </div>
                                 <ul id="list1">
-                                    <!-- <li>
-                                        <div class="checkTask">
-                                            <input id="checkbox" type="checkbox">
-                                        </div>
-                                        <div class="textTask">
-                                            <label for="checkbox">Lorem</label>
-                                        </div>
-                                        <div class="actionsTask">
-                                            <button><i class="fas fa-check"></i></button>
-                                            <button><i class="fas fa-edit"></i></button>
-                                            <button><i class="fas fa-trash-alt"></i></button>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="checkTask">
-                                            <input id="checkbox" type="checkbox">
-                                        </div>
-                                        <div class="textTask">
-                                            <label for="checkbox">lorem </label>
-                                        </div>
-                                        <div class="actionsTask">
-                                            <button><i class="fas fa-check"></i></button>
-                                            <button><i class="fas fa-edit"></i></button>
-                                            <button><i class="fas fa-trash-alt"></i></button>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="checkTask">
-                                            <input id="checkbox" type="checkbox">
-                                        </div>
-                                        <div class="textTask">
-                                            <label for="checkbox">Lorem </label>
-                                        </div>
-                                        <div class="actionsTask">
-                                            <button><i class="fas fa-check"></i></button>
-                                            <button><i class="fas fa-edit"></i></button>
-                                            <button><i class="fas fa-trash-alt"></i></button>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="checkTask">
-                                            <input id="checkbox" type="checkbox">
-                                        </div>
-                                        <div class="textTask">
-                                            <label for="checkbox">Lorem </label>
-                                        </div>
-                                        <div class="actionsTask">
-                                            <button><i class="fas fa-check"></i></button>
-                                            <button><i class="fas fa-edit"></i></button>
-                                            <button><i class="fas fa-trash-alt"></i></button>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="checkTask">
-                                            <input id="checkbox" type="checkbox">
-                                        </div>
-                                        <div class="textTask">
-                                            <label for="checkbox">Lorem </label>
-                                        </div>
-                                        <div class="actionsTask">
-                                            <button><i class="fas fa-check"></i></button>
-                                            <button><i class="fas fa-edit"></i></button>
-                                            <button><i class="fas fa-trash-alt"></i></button>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="checkTask">
-                                            <input id="checkbox" type="checkbox">
-                                        </div>
-                                        <div class="textTask">
-                                            <label for="checkbox">Lorem </label>
-                                        </div>
-                                        <div class="actionsTask">
-                                            <button><i class="fas fa-check"></i></button>
-                                            <button><i class="fas fa-edit"></i></button>
-                                            <button><i class="fas fa-trash-alt"></i></button>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="checkTask">
-                                            <input id="checkbox" type="checkbox">
-                                        </div>
-                                        <div class="textTask">
-                                            <label for="checkbox">Lorem </label>
-                                        </div>
-                                        <div class="actionsTask">
-                                            <button><i class="fas fa-check"></i></button>
-                                            <button><i class="fas fa-edit"></i></button>
-                                            <button><i class="fas fa-trash-alt"></i></button>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="checkTask">
-                                            <input id="checkbox" type="checkbox">
-                                        </div>
-                                        <div class="textTask">
-                                            <label for="checkbox">Lorem </label>
-                                        </div>
-                                        <div class="actionsTask">
-                                            <button><i class="fas fa-check"></i></button>
-                                            <button><i class="fas fa-edit"></i></button>
-                                            <button><i class="fas fa-trash-alt"></i></button>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="checkTask">
-                                            <input id="checkbox" type="checkbox">
-                                        </div>
-                                        <div class="textTask">
-                                            <label for="checkbox">Lorem </label>
-                                        </div>
-                                        <div class="actionsTask">
-                                            <button><i class="fas fa-check"></i></button>
-                                            <button><i class="fas fa-edit"></i></button>
-                                            <button><i class="fas fa-trash-alt"></i></button>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="checkTask">
-                                            <input id="checkbox" type="checkbox">
-                                        </div>
-                                        <div class="textTask">
-                                            <label for="checkbox">Lorem </label>
-                                        </div>
-                                        <div class="actionsTask">
-                                            <button><i class="fas fa-check"></i></button>
-                                            <button><i class="fas fa-edit"></i></button>
-                                            <button><i class="fas fa-trash-alt"></i></button>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="checkTask">
-                                            <input id="checkbox" type="checkbox">
-                                        </div>
-                                        <div class="textTask">
-                                            <label for="checkbox">Lorem </label>
-                                        </div>
-                                        <div class="actionsTask">
-                                            <button><i class="fas fa-check"></i></button>
-                                            <button><i class="fas fa-edit"></i></button>
-                                            <button><i class="fas fa-trash-alt"></i></button>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="checkTask">
-                                            <input id="checkbox" type="checkbox">
-                                        </div>
-                                        <div class="textTask">
-                                            <label for="checkbox">Lorem </label>
-                                        </div>
-                                        <div class="actionsTask">
-                                            <button><i class="fas fa-check"></i></button>
-                                            <button><i class="fas fa-edit"></i></button>
-                                            <button><i class="fas fa-trash-alt"></i></button>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="checkTask">
-                                            <input id="checkbox" type="checkbox">
-                                        </div>
-                                        <div class="textTask">
-                                            <label for="checkbox">Lorem </label>
-                                        </div>
-                                        <div class="actionsTask">
-                                            <button><i class="fas fa-check"></i></button>
-                                            <button><i class="fas fa-edit"></i></button>
-                                            <button><i class="fas fa-trash-alt"></i></button>
-                                        </div>
-                                    </li> -->
+
                                 </ul>
                             </div>
                         </div>
                         <div class="todo">
                             <div class="headerTasks">
                                 <label for="lists">Concluída</label>
+                                <label for="lists" id="qtd"></label>
                             </div>
                             <div class="items">
-                                <div class="notItem">
+                                <div class="notItem" id="notItem">
                                     Não existem tarefas concluídas!
                                 </div>
                                 <ul id="list2">
@@ -464,7 +298,7 @@
                                 </ul>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </section>

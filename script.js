@@ -1,22 +1,27 @@
-document.body.onload = hidenElement;
+var list = [];
 
-function adcElemento() {
+function CriaElementos() {
 
-    // ArrayList
-    var tasks = [];
-
-    // Pega valor do Input
-    var campo = document.querySelector('#inputText').value;
+    document.getElementById('btnTask').addEventListener('click', function () {
 
 
+        // chamando a tag <ul> para adicionar as <li>'s 
+        var ul = document.getElementById('list1');
 
-    if (campo !== '') {
+        // chamando o campo de texto <input> e pegando o valor digitado
+        var texto = document.getElementById('inputText').value;
 
-        // Pegando o a UL list1 no HTML
-        var ul = document.querySelector('#list1');
-
-        // Criando elementos
         var li = document.createElement('li');
+
+        var qtd = document.getElementById('qtd');
+
+
+
+        // var count = document.getElementsByClassName('countTasks');
+        var count = document.getElementById('test');
+
+        //criando elementos <tags>
+
         var div1 = document.createElement('div');
         var div2 = document.createElement('div');
         var div3 = document.createElement('div');
@@ -25,85 +30,61 @@ function adcElemento() {
         var button1 = document.createElement('button');
         var button2 = document.createElement('button');
         var button3 = document.createElement('button');
+        var i1 = document.createElement('i');
+        var i2 = document.createElement('i');
+        var i3 = document.createElement('i');
 
-        // Adicionando as classes
-        div1.classList.add("checkTask");
-        div2.classList.add("textTask");
-        div3.classList.add("actionsTask");
-        li.classList.add("li");
+        // adicionando as classes aos elementos
+        div1.classList.add('checkTask');
+        div2.classList.add('textTask');
+        div3.classList.add('actionsTask');
 
-        // Alterando o Type do Input
+        i1.classList.add('fas', 'fa-check');
+        i2.classList.add('fas', 'fa-edit');
+        i3.classList.add('fas', 'fa-trash-alt');
+
+
         input.setAttribute('type', 'checkbox');
 
-        // Criando o nó com o valor do Input
-        var value2 = document.createTextNode(campo);
-        var value4 = document.createTextNode(label);
+        // adicionando o texto dentro da label
+        label.innerHTML = texto;
 
-        // Adicionando os nós nas divs
+        // adicionando itens dentro das divs
         div1.appendChild(input);
-        // div2.appendChild(value2);
-        // div3.appendChild(value3);
+        div2.appendChild(label);
+        div3.appendChild(button1);
+        div3.appendChild(button2);
+        div3.appendChild(button3);
 
+        // adicionando icons dentro dos buttons
+        button1.appendChild(i1);
+        button2.appendChild(i2);
+        button3.appendChild(i3);
 
-        // Adicionando os nós aos elementos
-        // ul.appendChild(li);
-        
-        li.appendChild(div1)
+        // adicionando as divs dentro de <li>
+        li.appendChild(div1);
         li.appendChild(div2);
         li.appendChild(div3);
 
-        div2.appendChild(label);
-        label.appendChild(value2);
+        // adicionando a <li> dentro de <ul>
+        // ul.appendChild(li);        
 
-        // tasks.push(li);
-
-        
-        tasks.push(ul.appendChild(li));
-
-        // for(task in tasks.reverse()){
-            
-           
-        // }
-
-        // for (var i=0; i<=1; i++){
-            
-            
-        //     console.table(tasks);
-        // }
-
-        for (task in tasks) {
-            ul.appendChild(tasks[task]);
+        if (texto != '') {
+            list.push(li);
+            count.innerHTML = list.length;
+            qtd.innerHTML = 'Qtd ' + list.length;
+            var items = document.getElementById('notItem').style.display = "none";
+            console.log('teste: ' + items)
         }
-        
-        console.log(tasks);
 
-        
-    }
-
+        for (c in list) {
+            ul.appendChild(list[c]);
+        }
 
 
-    // Imprimindo no Console
-    // console.log('valor: ',campo);
-    // console.log(ul);
-    // console.log('Retornando a Li na lista: ', ul);
+        // console.log(ul);
+        console.log(list);
+    });
 }
 
-function hidenElement() {
-    var campo = document.querySelector('#inputText').value;
-    const pai = document.getElementById("list1");
-    const filho = pai.querySelector("li");
-    if (filho !== null) {
-        console.log("Existe");
-        if (campo !== null) {
-            var teste = document.getElementById("teste").style.display = "none";
-        }
-        console.log(teste);
-    } else {
-        console.log("Não existe");
-    }
-}
-
-
-
-
- 
+CriaElementos();
