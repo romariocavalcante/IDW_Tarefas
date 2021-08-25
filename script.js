@@ -74,16 +74,16 @@ function CriaElementos() {
             count.innerHTML = list.length;
             qtd.innerHTML = 'Qtd ' + list.length;
             var items = document.getElementById('notItem').style.display = "none";
-            console.log('teste: ' + items)
+            var text = document.getElementById('inputText').value = "";
+            if(list != 0) {
+                document.getElementById('inputText').placeholder = "Adicionar mais tarefas ?";
+            }
         }
 
         for (c in list) {
             ul.appendChild(list[c]);
         }
 
-
-        // console.log(ul);
-        console.log(list);
     });
 }
 
